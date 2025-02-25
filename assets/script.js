@@ -1,13 +1,20 @@
 jQuery(document).ready(function($) {
-    $('#add-task').on('click', function() {
-        var newTask = $('#new-task').val();
-        if (newTask) {
-            $('.todo-list').append('<li>' + newTask + ' <button class="todo-delete">حذف</button></li>');
-            $('#new-task').val('');
-        }
+    console.log('AdminPro Plus نسخه 1.2 فعال شد!');
+    // افکت کلیک برای دکمه‌ها
+    $('.adminpro-btn').on('click', function() {
+        $(this).animate({ opacity: 0.7 }, 100).animate({ opacity: 1 }, 100);
     });
-
-    $('.todo-list').on('click', '.todo-delete', function() {
-        $(this).parent().remove();
+    
+    // افکت چرخش به کارت‌ها هنگام هاور
+    $('.adminpro-card').hover(
+        function() { $(this).css('transform', 'rotate(2deg) scale(1.05)'); },
+        function() { $(this).css('transform', 'rotate(0deg) scale(1)'); }
+    );
+    
+    // پیام موفقیت بعد از ذخیره
+    $('form').on('submit', function() {
+        setTimeout(function() {
+            alert('تغییرات با موفقیت ذخیره شد!');
+        }, 500);
     });
 });
