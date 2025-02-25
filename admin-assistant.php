@@ -14,7 +14,13 @@ if (!defined('ABSPATH')) {
 // ثبت استایل‌ها و اسکریپت‌ها
 function adminpro_plus_enqueue_assets() {
     wp_enqueue_style('adminpro-plus-style', plugins_url('css/adminpro-plus.css', __FILE__));
-    wp_enqueue_script('adminpro-plus-script', plugins_url('js/adminpro-plus.js', __FILE__), array('jquery'), '1.3', true);
+    wp_enqueue_script(
+        'adminpro-plus-script',
+         plugins_url('js/adminpro-plus.js', __FILE__),
+          array('jquery'),
+           '1.3', 
+           ['defer',true]
+        );
     wp_enqueue_style('fullcalendar-style', 'https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css');
     wp_enqueue_script('fullcalendar-script', 'https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js', array('jquery'), '5.11.3', true);
 }
