@@ -1,43 +1,106 @@
-.adminpro-plus-wrap { padding: 20px; background: linear-gradient(135deg, #f5f7fa, #c3cfe2); }
-.adminpro-title { color: #ff6f61; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); font-size: 2em; }
-.adminpro-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.adminpro-plus-wrap { 
+    padding: 20px; 
+    background: linear-gradient(135deg, #ffffff, #f0fff0); /* سفید روشن تا سبز خیلی ملایم */
+    animation: bgFade 10s infinite;
+}
+@keyframes bgFade { 
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.adminpro-title { 
+    color: #2ecc71; /* سبز زنده */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    font-size: 2.5em; 
+    font-family: 'Iran Sans', sans-serif; 
+    animation: titlePulse 3s infinite;
+}
+@keyframes titlePulse { 
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.adminpro-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; 
+    padding: 20px;
+}
 
 .adminpro-card { 
-    background: #fff; 
-    padding: 20px; 
+    background: #ffffff; /* سفید خالص */
+    padding: 25px; 
     border-radius: 15px; 
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
-    transition: transform 0.3s ease; 
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1), 0 0 15px rgba(46, 204, 113, 0.1); /* سایه سبز ملایم */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+    position: relative;
+    overflow: hidden;
 }
-.adminpro-card:hover { transform: scale(1.05); }
+.adminpro-card:hover { 
+    transform: scale(1.05) rotate(2deg); 
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15), 0 0 20px rgba(46, 204, 113, 0.2);
+    background: linear-gradient(135deg, #ffffff, #f5fff5); /* سفید با هینت سبز خیلی ملایم */
+}
 
 .adminpro-btn { 
     display: inline-block; 
-    padding: 10px 20px; 
-    color: #fff; 
+    padding: 12px 25px; 
+    color: #ffffff; 
     text-decoration: none; 
     border-radius: 25px; 
-    margin: 5px; 
-    transition: all 0.3s ease; 
+    margin: 10px; 
+    transition: all 0.3s ease, transform 0.2s ease; 
+    font-family: 'Yekan Bakh', sans-serif;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    background: linear-gradient(45deg, #2ecc71, #27ae60); /* سبز با گرادیان */
 }
-.adminpro-btn:hover { filter: brightness(1.2); }
-.green { background: #2ecc71; }
-.purple { background: #9b59b6; }
-.blue { background: #3498db; }
-.orange { background: #e67e22; }
-.red { background: #e74c3c; }
+.adminpro-btn:hover { 
+    filter: brightness(1.2); 
+    transform: scale(1.1) rotate(5deg); 
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
 
-textarea { width: 100%; border: 2px solid #ddd; border-radius: 10px; padding: 10px; }
-.highlight { color: #ff6f61; font-weight: bold; }
+textarea { 
+    width: 100%; 
+    border: 2px solid #ddd; 
+    border-radius: 10px; 
+    padding: 15px; 
+    transition: border-color 0.3s ease, transform 0.3s ease; 
+    font-family: 'Iran Sans', sans-serif;
+    background: #f9fff9; /* سفید با هینت سبز خیلی ملایم */
+}
+textarea:focus { 
+    border-color: #2ecc71; /* سبز */
+    transform: scale(1.02); 
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+}
 
-#adminpro-calendar { max-width: 100%; margin-top: 10px; }
+.highlight { 
+    color: #2ecc71; /* سبز */
+    font-weight: bold; 
+    text-shadow: 0 0 5px rgba(46, 204, 113, 0.3); 
+    animation: highlightBlink 1.5s infinite;
+}
+@keyframes highlightBlink { 
+    0%, 100% { color: #2ecc71; text-shadow: 0 0 5px rgba(46, 204, 113, 0.3); }
+    50% { color: #27ae60; text-shadow: 0 0 10px rgba(39, 174, 96, 0.5); }
+}
+
+#adminpro-calendar { 
+    max-width: 100%; 
+    margin-top: 10px; 
+    border-radius: 15px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 2px solid #e0f8e0; /* حاشیه سبز ملایم */
+}
 
 /* انیمیشن‌ها */
-@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
 .animate-bounce { animation: bounce 2s infinite; }
-@keyframes slide { 0% { transform: translateX(-20px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
-.animate-slide { animation: slide 1s ease; }
-@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 111, 97, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(255, 111, 97, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 111, 97, 0); } }
-.animate-pulse { animation: pulse 2s infinite; }
-@keyframes fade { 0% { opacity: 0; } 100% { opacity: 1; } }
-.animate-fade { animation: fade 1.5s ease; }
+@keyframes slide { 0% { transform: translateX(-30px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+.animate-slide { animation: slide 1.2s ease; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(46, 204, 113, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); } }
+.animate-pulse { animation: pulse 2.5s infinite; }
+@keyframes fade { 0% { opacity: 0; transform: scale(0.8); } 100% { opacity: 1; transform: scale(1); } }
+.animate-fade { animation: fade 1.8s ease; }
