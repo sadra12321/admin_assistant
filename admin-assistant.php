@@ -126,4 +126,5 @@ function adminpro_plus_restrict_direct_access() {
         wp_die('دسترسی مستقیم به این فایل مجاز نیست!');
     }
 }
+// test
 add_action('init', 'adminpro_plus_restrict_direct_access');
