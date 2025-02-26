@@ -3,7 +3,7 @@
 Plugin Name: AdminPro Plus
 Description: پلاگین حرفه‌ای برای مدیریت سایت با امکانات جذاب و رنگی
 Version: 1.3
-Author: Grok (xAI)
+Author: nut24
 */
 
 // جلوگیری از دسترسی مستقیم به فایل PHP
@@ -35,7 +35,7 @@ function adminpro_plus_register_menu() {
         'adminpro-plus',
         'adminpro_plus_dashboard',
         'dashicons-admin-customizer',
-        2
+        6
     );
 }
 add_action('admin_menu', 'adminpro_plus_register_menu');
